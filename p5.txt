@@ -165,8 +165,11 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 
 15. Identifica la trama donde se finaliza la conversación.
  ** ¿Qué método SIP se utiliza?
+	Método BYE.
  ** ¿En qué trama(s)?
+	Trama 924, 925, 927 y 933.
  ** ¿Por qué crees que se envía varias veces?
+	Porque no recibe el 200 OK hasta la trama 938.
 
 
 16. Finalmente, se cierra la aplicación de VozIP.
