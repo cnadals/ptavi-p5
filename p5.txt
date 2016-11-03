@@ -174,8 +174,11 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 
 16. Finalmente, se cierra la aplicación de VozIP.
  ** ¿Por qué aparece una instrucción SIP del tipo REGISTER?
+	Para que el usuario se pueda dar de baja.
  ** ¿En qué trama sucede esto?
+	En la trama 952.
  ** ¿En qué se diferencia con la instrucción que se utilizó con anterioridad (al principio de la sesión)?
+	En que al principio de sesión, el valor del campo expires es 3600, y ahora sin embargo es 0.
 
 
 
