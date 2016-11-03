@@ -94,9 +94,17 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 
 10. Una vez registrados, podemos efectuar una llamada. Vamos a probar con el servicio de eco de Ekiga que nos permite comprobar si nos hemos conectado correctamente. El servicio de eco tiene la dirección sip:500@ekiga.net. Veamos el INVITE de cerca.
  ** ¿Puede verse el nombre del que efectúa la llamada, así como su dirección SIP?
+	El INVITE se encuentra en el paquete 84. En el apartado SIP, en Message Header podemos ver la información del campo
+	From donde aparece "Gregorio Robles", así como su dirección SIP <sip:grex@ekiga.net>.
  ** ¿Qué es lo que contiene el cuerpo de la trama? ¿En qué formato/protocolo está?
+	La trama contiene la descripción de la trama SDP. Los campos descritos son Owner/Creator, Connection Information (c),
+	Time Description, Media Description, Media Atributte (a).
+	El protocolo es SDP.
  ** ¿Tiene éxito el primer intento? ¿Cómo lo sabes?
+	No, dado que recibe una contestación con "Status: 407 Proxy Authentication Required", es decir, 
+	necesita recibir la información de dicho campo.
  ** ¿En qué se diferencia el segundo INVITE más abajo del primero? ¿A qué crees que se debe esto?
+	El segundo INVITE recibe un Status: 100, donde no observamos el error de INVITE anterior, donde faltaba la autenticación del proxy.
 
 
 11. Una vez conectado, estudia el intercambio de tramas.
