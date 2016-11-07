@@ -121,7 +121,7 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 	paquete 132: 1018 bytes, paquete 133: 407bytes, paquete 139: 1069bytes, paquete 140: 220bytes, etc.
  ** ¿Se utilizan bits de padding?
 	Bits de padding: bits de relleno.
-	No, no se utilizan dado que el campo Padding: false.
+	No, no se utilizan dado que el campo Padding tiene valor false.
  ** ¿Cuál es la periodicidad de los paquetes que se envían?
 	La periodicidad en el protocolo RTP varía, sin embargo, en el protocolo H.261 se envían cada 3600 segundos.
  ** ¿Cuántos bits/segundo estamos enviando?
@@ -141,7 +141,7 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 	El valor de delta significa la diferencia máxima entre paquetes consecutivos.
  ** ¿Cuáles son los valores de jitter (medio y máximo)? ¿Qué quiere decir eso? ¿Estamos ante una conversación de calidad?
 	El valor máximo de jitter es 119.64ms, y el valor medio es 42.50ms.
-	El valor de jitter indica la variación del retraso en la receptión de paquetes.
+	El valor de jitter indica la variación del retraso en la recepción de paquetes.
 	Dado que el valor de jitter es muy elevado, la conversación no es de calidad.
 
 
@@ -199,15 +199,24 @@ Captura una sesión SIP de una conversación con el número SIP sip:9999@qxip.ne
 
 17. Observa las diferencias en el inicio de la conversación entre el entorno del laboratorio y el del ejercicio anterior:
  ** ¿Es necesario el uso de DNS y STUN? ¿Por qué?
+	Sí, porque hay routers NAT.
  ** ¿Son diferentes el registro y la descripción de la sesión?
+	Sí, tienen diferentes campos.
 
 
 18. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
  ** ¿Cuántos flujos tenemos?
+	Dos, aunque ambos son de audio.
  ** ¿Cuál es su periodicidad?
+	54.96ms
  ** ¿Cuánto es el valor máximo del delta y los valores medios y máximo del jitter?
+	Max delta: 54.96ms
+	Max Jitter: 5.94ms
+	Min Jitter: 1.53ms
  ** ¿Podrías reproducir la conversación desde Wireshark? ¿Cómo? Comprueba que poniendo un valor demasiado pequeño para el buffer de jitter, la conversación puede no tener la calidad necesaria.
+	Sí, desde la ventana RTP Stream Analysis, en play streams.
  ** ¿Sabrías decir qué tipo de servicio ofrece sip:9999@qxip.net?
+	Audio.
 
 
 
